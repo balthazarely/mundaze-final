@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <title>Document</title>
+</head>
+<body>
+<div class="bgimage"></div>
+<%- include ../partials/_navbar.ejs %>
+
+          
+
+ 
+<div class="show-main-container">
+    <div class="grid-container-show">
+        <div class="column">
+            <h4 class="show-title"> <%=posts.title%></h4>
+            <p class="show-user">Posted by <%=posts.user.username%></p>
+            <p class="show-text"><%=posts.postBody%></p>
+            <a href="/posts" class="btn btn-light startRant" role="button">Back to Gallery</a>
+
+        </div>
+        <div class="column"> 
+            <a href="#"><img class="showpage-image" src="<%=posts.photo%>" alt="photohere"></a>
+            
+        </div>
+    </div>
+</div>
+
+
+    <div class="editDelete">
+    <% if(posts.user._id == currentUser){%>
+         <form class="loginButton editDeleteBtn editDeleteForm" action="/posts/<%=posts._id%>?_method=DELETE" method="POST">
+            <input type="submit" class="loginButton editDeleteBtn" value="delete post"/>
+        </form>
+        <form class="loginButton editDeleteBtn editDeleteForm" action="/posts/<%=posts._id%>/edit">
+            <input type="submit" class="loginButton editDeleteBtn" value="edit"/>
+        </form>    
+        <%}%>  
+    </div>
+
+   
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+</body>
+</html>
+       
+       
+  

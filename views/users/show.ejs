@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+
+<body>
+
+
+<%- include ../partials/_navbar.ejs %>
+
+
+
+
+<div class="user-body">
+<div class="wrapper">
+
+	
+
+	<div class="image-frame">
+		<img src="<%=user.profileImg%>" class="rounded" alt="Profile Picture">
+
+	 </div>
+	 <h2 class="user-h2"><%=user.username%></h2>
+</div><br>
+	
+	<p class="aboutMe-content" id="aboutMeText">about me: <%=user.aboutMe%></p>
+		<div>
+	
+
+
+<div>
+    <h4 class="userposts-header"> User Posts</h4>
+</div>
+
+
+
+<div class="main-container">
+    <div class="grid-container">
+        <%for(let i = 0; i < posts.length; i++) {%>
+            <article class="location-listing">
+            <div class="hoverclass" >
+                <a class="location-title" href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></a>
+                <div class="location-image">
+                    <a href="#"><img class="index-image width="300" height="169" src="<%=posts[i].photo%>" alt="photohere"></a>
+                </div>
+                </div>
+            </article>
+            
+        <%}%>
+    </div>
+</div>
+
+
+
+<div class="loginForm user">
+	<%if (user._id == currentUser){%>
+	<form action="/users/<%=user._id%>/edit?_method=Put">
+		<button class="loginButton user">Edit</button>
+	</form>
+	<form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+		<button class="loginButton user two">Delete</button>
+	</form>
+<% }%>
+</div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+</body>
+</html>
