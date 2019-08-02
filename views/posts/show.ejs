@@ -22,12 +22,11 @@
             <h4 class="show-title"> <%=posts.title%></h4>
             <p class="show-user">Posted by <%=posts.user.username%></p>
             <p class="show-text"><%=posts.postBody%></p>
+            <p class="show-text"><a href="<%=posts.share%>" class="share-link"><%=posts.share%></a></p><br/>
             <a href="/posts" class="btn btn-light startRant" role="button">Back to Gallery</a>
-
         </div>
         <div class="column"> 
-            <a href="#"><img class="showpage-image" src="<%=posts.photo%>" alt="photohere"></a>
-            
+            <a href="#"><img class="showpage-image" src="<%=posts.photo%>" alt="photohere"></a>            
         </div>
     </div>
 </div>

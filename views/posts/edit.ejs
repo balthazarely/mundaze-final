@@ -20,6 +20,8 @@
                     
                     <form class="editForm" action="/posts/<%=posts._id%>?_method=PUT" method="POST">
                         <p>Title: <input class="editPostInput" type="text" name="title" value="<%=posts.title%>" /></p>
+                        <p>Photo: <input type="text" class="editPostInput" name="photo" value="<%=posts.photo%>"/></p>
+                        <p>Share:<input class="editPostInput" type="text" name="share" value="<%=posts.share%>"/></p>
                         <p>Post: <textarea class="editPostInput" type="text" name="postBody"><%=posts.postBody%></textarea></p>
                         <input type="submit" class="btn btn-light startRant" value="Update"/>
                     </form>
