@@ -70,14 +70,15 @@ router.put('/:id', async (req, res)=>{
 
 //delete route
 router.delete('/:id', async (req, res)=>{
-		try{
-			const foundUser = await User.findByIdAndDelete(req.params.id);
-			const userPosts = await Posts.remove({user: req.params.id});
-			}			
-		catch{
-			res.redirect('/');
-		}
-})
+	try {
+		const user = await User.findByIdAndDelete(req.params.id);
+		const userPosts = await Posts.remove({user: req.params.id});
+		res.redirect('/login')
+	} catch (err) {
+		res.send(err)
+	}
+});
+
 
 
 

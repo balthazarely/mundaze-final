@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const connectionString = process.env.MONGODB_URI;
+
+const connectionString = 'mongodb://localhost/monday12';
+
 const db = mongoose.connection;
 
 mongoose.connect(connectionString, {useNewUrlParser: true, useCreateIndex: true});

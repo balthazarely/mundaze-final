@@ -1,7 +1,17 @@
+/* 
+body {
+    background: rgba(27,35,41,1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}  */
 
 body {
-    background: rgb(27,35,41);
+    background: linear-gradient(to right, rgba(27,35,41,1), rgba(27,35,41,.93)),
+    url('https://previews.123rf.com/images/oneinchpunch/oneinchpunch1801/oneinchpunch180100760/93826627-tokyo-japan-october-20-2017-busy-streets-of-shibuya-district-in-tokyo-at-night-japan-shibuya-is-one-.jpg');
+ 
+    background-size: cover;
 }
+
 
 strong {
     background: rgb(176,54,191);
@@ -12,6 +22,9 @@ strong {
 
 .navbar {
     min-height: 80px;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.44);
+box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.44);
 }
 
 .navbar-brand {
@@ -46,10 +59,14 @@ h4 {
     background: linear-gradient(90deg, rgba(176,54,191,1) 0%, rgba(34,142,154,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
+    animation-duration: 1s;
+    animation-name: bounceInDown;
 }   
+
 
 h6 {
     max-width: 800px;
+    margin: 20px 0px;
     color: rgba(255,255,255, 0.8);
 }
 
@@ -85,7 +102,7 @@ h6 {
 }
 
 .location-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     text-decoration: none;
     z-index: 1;
@@ -97,7 +114,8 @@ h6 {
     opacity: 0;
     transition: opacity .5s;
     background: rgb(176,54,191);
-    background: linear-gradient(135deg, rgba(176,54,191,1) 0%, rgba(34,142,154,1) 100%);    color: white;
+    background: linear-gradient(135deg, rgba(176,54,191,1) 0%, rgba(34,142,154,1) 100%);    
+    color: white;
 
     /* position the text in t’ middle*/
     display: flex;
@@ -136,6 +154,7 @@ h6 {
 
 
 
+
 /* this is the show page styles */
 .show-main-container {
     margin: 20px 60px;
@@ -144,7 +163,18 @@ h6 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-gap: 1em;
+    animation-duration: .7s;
+    animation-name: appear;
 }
+@keyframes appear {
+    0% {
+      transform: scale(0.01);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 .grid-container-show .column {
     flex-grow: 1;
@@ -195,6 +225,7 @@ h6 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-gap: 1em;
+    
 }
 
 .user-title-card {
@@ -202,9 +233,10 @@ h6 {
     margin: 0px 80px;
     border: solid 0px rgb(176,54,191);
     padding: 10px;
+    
 }
 
-.user-title-card:hover {
+.user-title-card, .user-name-card:hover {
     color: white;
     font-weight: 600;
     text-decoration: none;
@@ -214,16 +246,19 @@ h6 {
     padding: 10px;
 }
 
-
-
-
-
-
+.user-name-card { /*this is for the user index */
+    color: white;
+    margin: 0px 80px;
+    border: solid 0px rgb(176,54,191);
+    padding: 10px;
+    font-size: 17px;
+}
 
 
 
 
 /*this is the login page css */
+
 
 .container-fluid {
     color: white;
@@ -240,17 +275,20 @@ h6 {
     text-align: center;
 }
 
-
 .primaryTitle {
     font-size: 13vw;
     margin-top: 5%;
     margin-bottom: 5%;
     font-weight: 100;
+    animation-duration: .7s;
+    animation-name: bounceInDown;
 }
 
 .secondaryTitle {
     font-size: 4vw;
     font-weight: 100;
+
+    
 }
 
 .loginInput,
@@ -266,7 +304,10 @@ h6 {
 .loginForm, .createAccountForm {
     margin-bottom: 10%;
     font-weight: 100;
+ 
 }
+
+
 
 #dontHaveAccount {
     font-weight: 100;
@@ -370,6 +411,9 @@ input[type=text] {
   margin: 0 auto;
   height: 100%;
   width: 100%;
+  -webkit-box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.4);
+box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.4);
 }
 
 .loginButton.user{
@@ -403,13 +447,31 @@ input[type=text] {
 
 
 /* NEW POST PAGE */
-.newPostTitle,
-.editTitle {
+.newPostTitle, .editTitle {
     font-weight: 100;
     font-size: 7vw;
     margin-bottom: 3%;
     margin-top: 3%;
+    animation-duration: .7s;
+    animation-name: bounceInDown;
 }
+
+@keyframes bounceInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-2000px);
+    }
+    60% {
+       opacity: 1;
+       transform: translateY(20px);
+    }
+    80% {
+       transform: translateY(-10px);
+    }
+    100% {
+       transform: translateY(0);
+    }
+ } 
 
 .newPostForm,
 .editForm {
