@@ -17,12 +17,17 @@
 <div class="about-us">
     <div>
         <h4> Our Users</h4>
-      
-            <a href="/posts/" class="btn btn-light startRant" role="button">Back To Rants</a>
+              <h6 class="about-body">We hate mondays, but we love our users. Check out all the members that our contributing amazing and hilarious material for your enjoyment. Happy mundaze!</h6>
+        </div>
+    
+            <%# <a href="/posts/" class="btn btn-light startRant" role="button">Back To Rants</a> %>
+  
 
             <%# <button type="button" class="btn btn-light">Start Your Rant!</button> %>
         </div>
 </div>
+
+
 
 
 
@@ -31,7 +36,7 @@
         <%for(let i = 0; i < users.length; i++) {%>
             <article class="location-listing">
             <div class="hoverclass" >
-                <a class="user-title-card" href="/users/<%=users[i]._id%>"><%=users[i].username%></a>
+                <a class="user-name-card" href="/users/<%=users[i]._id%>"><%=users[i].username%></a>
                 
                 </div>
             </article>
@@ -39,7 +44,6 @@
         <%}%>
     </div>
 </div>
-
 
 
 
