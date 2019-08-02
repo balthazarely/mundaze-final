@@ -13,7 +13,10 @@ const postSchema = new mongoose.Schema({
         type: Date, 
         default: Date.now
     },
-    video: String, 
+    video: {
+        type: String, 
+        default:'https://i.imgur.com/3FWYaDH.png'
+}, 
     photo: {
         type: String, 
         default:'https://i.imgur.com/3FWYaDH.png'

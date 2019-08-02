@@ -13,7 +13,6 @@
 <div class="bgimage"></div>
 <%- include ../partials/_navbar.ejs %>
 
-          
 
  
 <div class="show-main-container">
@@ -25,11 +24,23 @@
             <p class="show-text"><a href="<%=posts.share%>" class="share-link"><%=posts.share%></a></p><br/>
             <a href="/posts" class="btn btn-light startRant" role="button">Back to Gallery</a>
         </div>
+        
         <div class="column"> 
-            <a href="#"><img class="showpage-image" src="<%=posts.photo%>" alt="photohere"></a>            
+
+        <%if(posts.video !== "https://i.imgur.com/3FWYaDH.png" && posts.video !== ""){%>
+            <div class='videopost'>
+                <%-posts.video%>   
+            </div> 
+            <%} else {%>      
+            <a href="#"><img class="showpage-image" src="<%=posts.photo%>" alt="photohere"></a>
+            <% } %>
+
         </div>
     </div>
 </div>
+
+
+
 
 
     <div class="editDelete">
@@ -43,7 +54,7 @@
         <%}%>  
     </div>
 
-   
+
 
 
 
