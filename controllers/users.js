@@ -70,13 +70,16 @@ router.put('/:id', async (req, res)=>{
 
 //delete route
 router.delete('/:id', async (req, res)=>{
-	try{
-	const user = await User.findByIdAndDelete(req.params.id);
-	res.redirect('/users')
-	}catch(err){
+	// const currentUser = req.session.userId;
+	// if(currentUser == req.session.userId){
+	try {
+		const user = await User.findByIdAndDelete(req.params.id);
+		const userPosts = await Posts.remove({user: req.params.id});
+		res.redirect('/login')
+	} catch (err) {
 		res.send(err)
 	}
-})
+});
 
 
 
