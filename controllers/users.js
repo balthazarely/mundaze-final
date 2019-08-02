@@ -70,8 +70,6 @@ router.put('/:id', async (req, res)=>{
 
 //delete route
 router.delete('/:id', async (req, res)=>{
-	// const currentUser = req.session.userId;
-	// if(currentUser == req.session.userId){
 	try {
 		const user = await User.findByIdAndDelete(req.params.id);
 		const userPosts = await Posts.remove({user: req.params.id});
@@ -80,6 +78,7 @@ router.delete('/:id', async (req, res)=>{
 		res.send(err)
 	}
 });
+
 
 
 

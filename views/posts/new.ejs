@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    
 </head>
 <body>
 <%- include ../partials/_navbar.ejs %>
@@ -21,6 +22,7 @@
 
                 <form class="newPostForm" action="/posts" method="POST">
                     <input placeholder="title" class="newPostInput newPost" type="text" name="title" /><br/>
+                    <input placeholder="share a post, article, etc." class="newPostInput newPost" type="url" name="share" /><br/>
                     <input placeholder="photo url" class="newPostInput newPost" type="text" name="photo" /><br/>
                     <input Placeholder="video url" class="newPostInput newPost" type="text" name="video" /><br/>
                     <textarea placeholder="rant goes here" class="newPostInput" type="text" name="postBody"></textarea><br/>

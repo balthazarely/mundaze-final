@@ -176,6 +176,9 @@ h6 {
     }
   }
 
+.share-link {
+    word-break: break-all;
+}
 .grid-container-show .column {
     flex-grow: 1;
     order: 1;
@@ -215,6 +218,10 @@ h6 {
         grid-template-columns: 1fr 1fr;
         grid-gap: 1em;
     }
+}
+
+.share-link {
+    word-break: break-all;
 }
 /* end of show page styles */
 
@@ -297,6 +304,7 @@ h6 {
     border-radius: 5px;
 }
 
+
 .createAccountSection {
     display: none;
 }
@@ -306,8 +314,6 @@ h6 {
     font-weight: 100;
  
 }
-
-
 
 #dontHaveAccount {
     font-weight: 100;

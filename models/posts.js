@@ -24,7 +24,8 @@ const postSchema = new mongoose.Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    }
+    },
+    share: String
 });
 
 
