@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = Schema({
 	profileImg: {type: String, default:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpzD-cx0s1md7QU92v0ZDJWCiIKfQ8HWxIiI76o5APPy11ilZ6bA'},
-	aboutMe: {type: String, default:"im a boring peice of shit"},
+	aboutMe: {type: String, default:"I'm too boring to put an about me..."},
 	username: {type: String, unique: true, require: true},
 	password: {type: String, require: true},
 	posts: {
